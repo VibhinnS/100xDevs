@@ -11,4 +11,8 @@ const markTodoAsCompleted = zod.object({
     id: zod.string()
 })
 
-export { createTodo, markTodoAsCompleted }
+const getOneTodo = zod.object({
+    id: zod.string()
+})
+
+export { createTodo, markTodoAsCompleted, getOneTodo }
