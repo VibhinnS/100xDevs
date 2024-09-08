@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
-import { TodoAppItem, TodoItemProps } from './interface';
+import { ITodoAppItem, ITodoItemProps } from './interface';
 
 const App: React.FC = (): JSX.Element => {
-  const [todos, setTodos] = useState<Array<TodoAppItem>>([{
+  const [todos, setTodos] = useState<Array<ITodoAppItem>>([{
     title: "Go to Gym",
     description: "5-7 Gym",
     completed: false
@@ -35,7 +35,7 @@ const App: React.FC = (): JSX.Element => {
 }
 
 
-const TodoItem: React.FC<TodoItemProps> = ({ title, description, completed, toggleCompleted }): JSX.Element => {
+const TodoItem: React.FC<ITodoItemProps> = ({ title, description, completed, toggleCompleted }): JSX.Element => {
   return (
     <div>
       <h1>{title}</h1>
