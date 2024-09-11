@@ -1,7 +1,9 @@
+import { Document } from "mongoose"
+
 export interface ICreateToDoBody {
     title: string,
     description: string,
-    date: Date
+    date: Date,
     targetDate: Date
 }
 
@@ -11,4 +13,11 @@ export interface IToDoCompletedBody {
 
 export interface ISingleToDoItemBody {
     id: string
+}
+
+export interface ITodo extends Document{
+    title: string,
+    description: string,
+    date: Date,
+    targetDate: Date
 }

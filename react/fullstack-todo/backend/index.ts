@@ -16,7 +16,7 @@ app.get('/todo-item', (req: Request, res: Response) => {
 
     if (!response.success) {
         res.status(411).json({
-            msg:"Todo does not exist"
+            msg:"Todo item does not exist"
         })
         return;
     }
@@ -32,7 +32,6 @@ app.post('/create-todo', (req: Request, res: Response) => {
         })
         return;
     }
-    
 })
 
 app.put('/todo-completed', (req: Request, res: Response) => {
