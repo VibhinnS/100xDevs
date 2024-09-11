@@ -4,7 +4,7 @@ import { ITodo } from "./interface";
 const dbUsername: string | undefined = process.env.DB_USERNAME;
 const dbPassword: string | undefined = process.env.DB_PASSWORD;
 
-const dbConnectionString: string = `mongodb+srv://${dbUsername}:${dbPassword}@db1.b9r3r.mongodb.net/yourDatabaseName`;
+const dbConnectionString: string = `mongodb+srv://vibhinnsinghal:admin123@db1.b9r3r.mongodb.net/yourDatabaseName`;
 
 mongoose.connect(dbConnectionString)
 

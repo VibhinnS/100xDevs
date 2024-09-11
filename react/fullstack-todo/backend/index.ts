@@ -9,7 +9,10 @@ app.use(express.json())
 
 app.get('/', async (req: Request, res: Response) => {
     const todos = await todo.find({})
-    res.status(200).json(todos);
+    res.status(200).json({
+        msg: "Working Fine",
+        todos: todos
+    });
 })
 
 app.get('/todo-item', async (req: Request, res: Response) => {
@@ -39,6 +42,7 @@ app.post('/create-todo', async (req: Request, res: Response) => {
         res.status(411).json({
             msg: "Wrong data sent"
         })
+        console.log(response.error);
         return;
     }
 
@@ -79,3 +83,6 @@ app.put('/todo-completed', async (req: Request, res: Response) => {
     })
 
 })
+
+
+app.listen(3000);
