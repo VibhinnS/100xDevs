@@ -1,16 +1,18 @@
 import express, { Express, Request, Response } from "express"
 import { createTodo, markTodoAsCompleted, getOneTodo } from "./types";
 import { ICreateToDoBody, IToDoCompletedBody, ISingleToDoItemBody } from "./interface";
+import todo from "./database";
 
 let app: Express = express();
 
 app.use(express.json())
 
-app.get('/', (req: Request, res: Response) => {
-    res.send("List of all the todos")
+app.get('/', async (req: Request, res: Response) => {
+    const todos = await todo.find({})
+    res.status(200).json(todos);
 })
 
-app.get('/todo-item', (req: Request, res: Response) => {
+app.get('/todo-item', async (req: Request, res: Response) => {
     const singleToDoItemBody: ISingleToDoItemBody = req.body
     const response = getOneTodo.safeParse(singleToDoItemBody);
 
@@ -20,9 +22,16 @@ app.get('/todo-item', (req: Request, res: Response) => {
         })
         return;
     }
+
+    const todoItem = await todo.find({
+        _id: singleToDoItemBody.id,
+    })
+
+    res.status(200).json(todoItem)
+
 })
 
-app.post('/create-todo', (req: Request, res: Response) => {
+app.post('/create-todo', async (req: Request, res: Response) => {
     const createTodoBody: ICreateToDoBody = req.body;
     const response = createTodo.safeParse(createTodoBody) 
 
@@ -32,9 +41,23 @@ app.post('/create-todo', (req: Request, res: Response) => {
         })
         return;
     }
+
+    await todo.create<ICreateToDoBody>({
+
+        title: createTodoBody.title,
+        description: createTodoBody.description,
+        date: createTodoBody.date,
+        targetDate: createTodoBody.targetDate,
+        completed: false
+
+    })
+    res.json({
+        msg: "Todo created!"
+    })
 })
 
-app.put('/todo-completed', (req: Request, res: Response) => {
+
+app.put('/todo-completed', async (req: Request, res: Response) => {
     const toDoCompletedBody: IToDoCompletedBody = req.body;
     const response = markTodoAsCompleted.safeParse(toDoCompletedBody)
 
@@ -44,5 +67,15 @@ app.put('/todo-completed', (req: Request, res: Response) => {
         })
         return;
     }
-    res.send("Marked as completed!")
+
+    await todo.updateOne({
+        _id: toDoCompletedBody.id,
+    }, {
+        completed: true
+    })
+
+    res.json({
+        msg: "Completed! Yayy!"
+    })
+
 })
