@@ -1,11 +1,13 @@
 import express, { Express, Request, Response } from "express"
 import { createTodo, markTodoAsCompleted, getOneTodo } from "./types";
 import { ICreateToDoBody, IToDoCompletedBody, ISingleToDoItemBody } from "./interface";
+import cors from "cors";
 import todo from "./database";
 
 let app: Express = express();
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/', async (req: Request, res: Response) => {
     const todos = await todo.find({})
