@@ -1,20 +1,23 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CreateTodo from "./components/CreateTodo"
 import Todos from "./components/Todos"
 import { ITodoItem } from "./interface"
 
 const App: React.FC = (): JSX.Element => {
   const [todos, setTodos] = useState<Array<ITodoItem>>([])
-  
-  fetch("http://localhost:3000")
-  .then(async function (res) {
-    const response = await res.json();
-    setTodos(response.todos);
-    return
-  })
-  .catch(function (error) {
-    console.error(error);
-  });
+
+  useEffect(() => {
+    const fetchTodos = async ():Promise<void> => {
+      try {
+        const res = await fetch("http://localhost:3000");
+        const response = await res.json();
+        setTodos(response.todos);
+      } catch (error) {
+        console.error('Error fetching todos:', error);
+      }
+    };
+    fetchTodos();
+  }, []); 
 
   return (
     <div>
