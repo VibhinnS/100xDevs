@@ -1,0 +1,15 @@
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\bin\Debug\net8.0\TempCS.exe
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\bin\Debug\net8.0\TempCS.deps.json
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\bin\Debug\net8.0\TempCS.runtimeconfig.json
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\bin\Debug\net8.0\TempCS.dll
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\bin\Debug\net8.0\TempCS.pdb
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.AssemblyInfoInputs.cache
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.AssemblyInfo.cs
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.csproj.CoreCompileInputs.cache
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.sourcelink.json
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.dll
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\refint\TempCS.dll
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.pdb
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\TempCS.genruntimeconfig.cache
+C:\Users\Vibhinn Singhal\harkirat\react\TempCS\obj\Debug\net8.0\ref\TempCS.dll
