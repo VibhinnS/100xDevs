@@ -1,7 +1,14 @@
 import { Client } from "pg";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 export async function getClient(): Promise<Client> {
-    const client: Client = new Client("postgresql://postgres:nAl9txA3KaFpl7Ot@cannily-thorough-dabchick.data-1.use1.tembo.io:5432/postgres")
+    const client: Client = new Client({
+        connectionString: process.env.DATABASE_URL,
+        ssl: { rejectUnauthorized: false}
+    });
     await client.connect();
     return client;
 }
+

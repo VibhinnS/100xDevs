@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TempCS")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e4724f77c5b80a9a57a900be1f46e0d89453b7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+040312d95967246315642708b27597122d65e522")]
 [assembly: System.Reflection.AssemblyProductAttribute("TempCS")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TempCS")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
